@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2026 at 11:19 AM
+-- Generation Time: Jan 19, 2026 at 05:31 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -141,7 +141,7 @@ INSERT INTO `transactions` (`id`, `book_id`, `user_id`, `borrow_date`, `expected
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `PASSWORD` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `NAME` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `role` enum('admin','student','teacher','staff') DEFAULT 'student',
@@ -160,8 +160,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `PASSWORD`, `NAME`, `email`, `role`, `student_id`, `teacher_id`, `staff_id`, `YEAR`, `major`, `department`, `POSITION`, `phone`, `created_at`) VALUES
-(1, 'admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'ผู้ดูแลระบบ', 'admin@plms.local', 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-18 16:43:44'),
+INSERT INTO `users` (`id`, `username`, `password`, `NAME`, `email`, `role`, `student_id`, `teacher_id`, `staff_id`, `YEAR`, `major`, `department`, `POSITION`, `phone`, `created_at`) VALUES
+(1, 'admin', '$2y$10$IzX7et2BWWZOXXVIyeRJIOSlr5120eSRO2lmHEf8YYAmFbWGtJJPe', 'ผู้ดูแลระบบ', 'admin@plms.local', 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-18 16:43:44'),
 (2, 'student1', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'สมชาย เรียนดี', 'student1@example.com', 'student', 'ST001', NULL, NULL, 3, 'วิศวกรรมคอมพิวเตอร์', NULL, NULL, '081-111-1111', '2026-01-18 16:43:44'),
 (3, 'teacher1', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'ดร.สมศรี สอนดี', 'teacher1@example.com', 'teacher', NULL, 'TC001', NULL, NULL, NULL, 'คณะวิศวกรรมศาสตร์', 'ผู้ช่วยศาสตราจารย์', '082-222-2222', '2026-01-18 16:43:44'),
 (4, 'staff1', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'นางสมหวัง ทำงาน', 'staff1@example.com', 'staff', NULL, NULL, 'SF001', NULL, NULL, 'งานทะเบียน', 'เจ้าหน้าที่ทะเบียน', '083-333-3333', '2026-01-18 16:43:44');

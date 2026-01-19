@@ -9,8 +9,8 @@ Auth::requireAdmin();
 $page_title = 'แดชบอร์ดผู้ดูแลระบบ';
 
 // ดึงข้อมูลจากฐานข้อมูล
-$summary = $db->getSummaryReport();
-$recent_transactions = array_slice($db->getAllTransactions(), 0, 10);
+$summary = getSummaryReport();
+$recent_transactions = array_slice( getAllTransactions(), 0, 10);
 ?>
 <!DOCTYPE html>
 <html lang="th">

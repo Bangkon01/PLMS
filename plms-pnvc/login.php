@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // บันทึกข้อมูลผู้ใช้ในเซสชัน
                     $_SESSION['user_id'] = $user['id'];
                     $_SESSION['username'] = $user['username'];
-                    $_SESSION['user_name'] = $user['name'];
+                    $_SESSION['user_name'] = $user['NAME'];
                     $_SESSION['user_role'] = $user['role'];
                     
                     // บันทึกข้อมูลเพิ่มเติมตาม role

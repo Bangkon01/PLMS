@@ -60,6 +60,28 @@ function getConnection() {
     return $db;
 }
 
+function getSummaryReport() {
+    global $db;
+
+    try {
+        return [
+            'users' => $db->query("SELECT COUNT(*) FROM users")->fetchColumn(),
+            'books' => $db->query("SELECT COUNT(*) FROM books")->fetchColumn(),
+            'borrowed' => $db->query("
+                SELECT COUNT(*) 
+                FROM transactions 
+                WHERE status = 'borrowed'
+            ")->fetchColumn(),
+        ];
+    } catch (PDOException $e) {
+        return [
+            'users' => 0,
+            'books' => 0,
+            'borrowed' => 0,
+        ];
+    }
+}
+
 // เชื่อมต่อฐานข้อมูล
 $db = getConnection();
 
